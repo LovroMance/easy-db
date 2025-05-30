@@ -75,7 +75,7 @@ public class NormalStore implements Store {
         this.memTable = new TreeMap<String, Command>();
         this.index = new HashMap<>();
 
-        File file = new File(dataDir);
+        File file = new File(dataDir);  // 这里是创建存放数据的目录，也就是data文件夹
         if (!file.exists()) {
             LoggerUtil.info(LOGGER,logFormat, "NormalStore","dataDir isn't exist,creating...");
             file.mkdirs();
